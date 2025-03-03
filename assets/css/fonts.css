@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Cormorant-Bold';
+    src: url(../fonts/Cormorant-Bold.ttf);
+}
+@font-face {
+    font-family: 'Cormorant-BoldItalic';
+    src: url(../fonts/Cormorant-BoldItalic.ttf);
+}
+@font-face {
+    font-family: 'Cormorant-Regular';
+    src: url(../fonts/Cormorant-Regular.ttf);
+}
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
