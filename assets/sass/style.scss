@@ -4,6 +4,7 @@ $white: #ffffff;
 $grey: #899D9D;
 $primary-green: #BAE249;
 $green-text: #506829;
+$danger: #bd2727;
 
 * {
     margin: 0;
@@ -31,6 +32,31 @@ body {
 }
 
 .header {
+
+    // .header__user-menu
+
+    &__user-menu {
+
+        width: 120px;
+        left: 40px;
+        top: 35px;
+        position: absolute;
+        padding: 10px;
+        background: $background;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        // .header__user-menu_item
+
+        &_item {
+            color: $white;
+            font-size: 14px;
+            font-family: 'OpenSans-Regular';
+        }
+    }
+
 
     background: $background;
     backdrop-filter: blur(7px);
@@ -66,6 +92,7 @@ body {
             margin-left: 296px;
             display: flex;
             gap: 64px;
+            position: relative;
         }
 
         &_logout {
@@ -423,6 +450,28 @@ body {
         flex-direction: column;
         justify-content: center;
 
+        &__user-menu {
+
+            width: 120px;
+            left: 8px;
+            top: 35px;
+            position: absolute;
+            padding: 10px;
+            background: $background;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+    
+            // .header__user-menu_item
+    
+            &_item {
+                color: $white;
+                font-size: 14px;
+                font-family: 'OpenSans-Regular';
+            }
+        }
+
         &__row {
 
             display: flex;
@@ -625,6 +674,7 @@ body {
             margin-bottom: 30px;
             line-height: 100%;
             letter-spacing: 0%;
+            padding: 15px;
         }
 
         &__wrapper {
@@ -699,14 +749,18 @@ body {
             color: $white;
             font-family: 'Cormorant-Bolditalic';
             font-size: 48px;
+            margin: 0 auto;
             line-height: 100%;
             letter-spacing: 0%;
             margin-bottom: 16px;
+            max-width: 280px;
         }
 
         &__description {
             color: $white;
             font-family: 'OpenSans-Regular';
+            max-width: 280px;
+            margin: 0 auto;
             font-size: 16px;
             line-height: 150%;
             letter-spacing: 0%;
@@ -730,6 +784,8 @@ body {
                 line-height: 150%;
                 letter-spacing: 0%;
                 padding: 10px 16px;
+                width: 280px;
+                margin: 0 auto;
             }
 
             &_field::placeholder {
@@ -742,6 +798,7 @@ body {
 
             &_btn {
                 width: 145px;
+                margin: 0 auto;
                 height: 40px;
                 background-color: $primary-green;
                 border: none;
@@ -837,7 +894,6 @@ body {
 }
 
 .form {
-
     border: 2px solid $background-shade;
     padding: 30px;
     display: flex;
@@ -847,6 +903,10 @@ body {
     max-width: 540px;
     min-width: 280px;
     margin: 132px auto;
+
+    @media (max-width: 320px) {
+        border: none;
+    }
 
 
     &__title {
@@ -892,4 +952,15 @@ body {
             text-align: center;
         }
     }
+}
+
+.error {
+    font-family: 'OpenSans-Bold';
+    font-size: 1rem;
+    text-align: center;
+    color: $danger;
+}
+
+.hidden {
+    display: none;
 }

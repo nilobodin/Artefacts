@@ -32,6 +32,23 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.header__user-menu {
+  width: 120px;
+  left: 40px;
+  top: 35px;
+  position: absolute;
+  padding: 10px;
+  background: #1D2F30;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.header__user-menu_item {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: "OpenSans-Regular";
+}
 .header__row {
   display: flex;
   align-items: center;
@@ -55,6 +72,7 @@ body {
   margin-left: 296px;
   display: flex;
   gap: 64px;
+  position: relative;
 }
 .header__row_logout {
   border: none;
@@ -359,6 +377,23 @@ body {
     flex-direction: column;
     justify-content: center;
   }
+  .header__user-menu {
+    width: 120px;
+    left: 8px;
+    top: 35px;
+    position: absolute;
+    padding: 10px;
+    background: #1D2F30;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .header__user-menu_item {
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans-Regular";
+  }
   .header__row {
     display: flex;
     gap: 110px;
@@ -521,6 +556,7 @@ body {
     margin-bottom: 30px;
     line-height: 100%;
     letter-spacing: 0%;
+    padding: 15px;
   }
   .artefacts__wrapper {
     display: flex;
@@ -582,13 +618,17 @@ body {
     color: #ffffff;
     font-family: "Cormorant-Bolditalic";
     font-size: 48px;
+    margin: 0 auto;
     line-height: 100%;
     letter-spacing: 0%;
     margin-bottom: 16px;
+    max-width: 280px;
   }
   .help__description {
     color: #ffffff;
     font-family: "OpenSans-Regular";
+    max-width: 280px;
+    margin: 0 auto;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0%;
@@ -610,6 +650,8 @@ body {
     line-height: 150%;
     letter-spacing: 0%;
     padding: 10px 16px;
+    width: 280px;
+    margin: 0 auto;
   }
   .help__inputs-wrapper_field::-moz-placeholder {
     color: #899D9D;
@@ -634,6 +676,7 @@ body {
   }
   .help__inputs-wrapper_btn {
     width: 145px;
+    margin: 0 auto;
     height: 40px;
     background-color: #BAE249;
     border: none;
@@ -724,6 +767,11 @@ body {
   min-width: 280px;
   margin: 132px auto;
 }
+@media (max-width: 320px) {
+  .form {
+    border: none;
+  }
+}
 .form__title {
   /* h2 */
   color: #ffffff;
@@ -755,4 +803,15 @@ body {
   line-height: 150%;
   letter-spacing: 0%;
   text-align: center;
+}
+
+.error {
+  font-family: "OpenSans-Bold";
+  font-size: 1rem;
+  text-align: center;
+  color: #bd2727;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

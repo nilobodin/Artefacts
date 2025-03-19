@@ -1,4 +1,5 @@
 <?php 
+include "vendor/functions/core.php";
 $enter = 'vendor/components/auth.php';
 include "vendor/components/header.php";
 ?>

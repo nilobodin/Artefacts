@@ -71,4 +71,5 @@
 </footer>
 </body>
 
+<script src="assets/scripts/popup.js"></script>
 </html>
