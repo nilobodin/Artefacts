@@ -1,6 +1,9 @@
-<?php 
+<?php
+include "vendor/functions/core.php";
 $enter = 'vendor/components/auth.php';
 include "vendor/components/header.php";
+
+$products = $link->query("SELECT * FROM `products` WHERE 1");
 ?>
 <main class="main">
     <section class="main__hero">
@@ -33,50 +36,20 @@ include "vendor/components/header.php";
     </section>
     <section class="main__cards">
         <div class="container main__cards-container">
-            <article class="main__card">
-                <img src="assets/img/card1.png" alt="not founded" class="main__card-img">
-                <div class="main__card-border">
-                    <p class="main__card-title">Fig. 1 (plant)</p>
-                    <p class="main__card-description">
-                        Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны
-                        третьего
-                        мира своевременно верифицированы.
-                    </p>
-                    <button class="main__card-btn">Подробнее</button>
-                </div>
-            </article>
-            <article class="main__card">
-                <img src="assets/img/card2.png" alt="not founded" class="main__card-img">
-                <div class="main__card-border">
-                    <p class="main__card-title">Fig. 2 (leaf)</p>
-                    <p class="main__card-description">
-                        Прежде всего, синтетическое тестирование влечет за собой процесс внедрения и модернизации
-                        условий.
-                    </p>
-                    <button class="main__card-btn">Подробнее</button>
-                </div>
-            </article>
-            <article class="main__card">
-                <img src="assets/img/card3.png" alt="not founded" class="main__card-img">
-                <div class="main__card-border">
-                    <p class="main__card-title">Fig. 3 (flower)</p>
-                    <p class="main__card-description">
-                        Лишь непосредственные участники прогресса неоднозначны и будут в равной степени
-                        предоставлены сами себе для работы.
-                    </p>
-                    <button class="main__card-btn">Подробнее</button>
-                </div>
-            </article>
-            <article class="main__card">
-                <img src="assets/img/card4.png" alt="not founded" class="main__card-img">
-                <div class="main__card-border">
-                    <p class="main__card-title">Fig. 4 (wood)</p>
-                    <p class="main__card-description">
-                        Базовый вектор развития не даёт нам иного выбора, кроме определения новых предложений.
-                    </p>
-                    <button class="main__card-btn">Подробнее</button>
-                </div>
-            </article>
+            <?php foreach ($products as $key => $value) { ?>
+                <article class="main__card">
+                    <img src="<?= $value['img'] ?>" alt="not founded" class="main__card-img">
+                    <div class="main__card-border">
+                        <p class="main__card-title">
+                            <?= $value['title'] ?>
+                        </p>
+                        <p class="main__card-description">
+                            <?= $value['descriptions'] ?>
+                        </p>
+                        <button class="main__card-btn">Подробнее</button>
+                    </div>
+                </article>
+            <?php } ?>
         </div>
         <div class="main__cards-arrows">
             <svg class="main__cards-arrows_arrow-left" width="26.004089" height="13.321777"

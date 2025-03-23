@@ -71,4 +71,19 @@
 </footer>
 </body>
 
+<script src="/assets/scripts/jquery.js"></script>
+<script src="/assets/scripts/popup.js"></script>
+<script src="/assets/scripts/slick.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.main__cards-container').slick({
+            infinite: true,
+            speed: 200,
+            slidesToShow: 4,
+            prevArrow: $('.main__cards-arrows_arrow-left'),
+            nextArrow: $('.main__cards-arrows_arrow-right'),
+        });
+    });
+</script>
+
 </html>

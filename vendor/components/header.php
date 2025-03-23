@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick.css" />
     <title>F&B</title>
 </head>
 
@@ -39,11 +41,24 @@
                     <div class="header__row_search">
                         <img src="/assets/img/search.svg" alt="not founded" class="header__row_search-img">
                     </div>
-                    <a href="<?php echo $enter ?>" class="header__row_logout-link">
-                        <button class="header__row_logout">
-                            <img src="/assets/img/log-in.svg" alt="not founded" class="header__row_logout-img">
+                    <?php if (!isset($_SESSION['user'])) { ?>
+                        <a href="<?php echo $enter ?>" class="header__row_logout-link">
+                            <button class="header__row_logout">
+                                <img src="/assets/img/log-in.svg" alt="not founded" class="header__row_logout-img">
+                            </button>
+                        </a>
+                    <?php } else { ?>
+                        <button class="header__row_logout user-btn">
+                            <img src="/assets/img/user.svg" alt="not founded" class="header__row_logout-img">
                         </button>
-                    </a>
+                        <section class="header__user-menu hidden">
+                            <a href="/vendor/components/profile.php" class="header__user-menu_item">Профиль</a>
+                            <?php if ($_SESSION['user']['role'] == 2) { ?>
+                                <a href="/vendor/components/admin.php" class="header__user-menu_item">Админ-панель</a>
+                            <?php } ?>
+                            <a href="/vendor/functions/logout.php" class="header__user-menu_item">Выход</a>
+                        </section>
+                    <?php } ?>
                 </div>
             </div>
         </div>
