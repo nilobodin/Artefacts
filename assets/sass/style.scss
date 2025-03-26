@@ -439,6 +439,10 @@ body {
 
 @media (max-width: 320px) {
     body {
+        margin: 0;
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
         background: $background;
     }
 
@@ -986,6 +990,11 @@ body {
             margin: 0 auto;
             border: 2px solid $background-shade;
             border-radius: 8px;
+
+            @media (max-width: 320px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         // .main__profile_avatar
@@ -1024,14 +1033,6 @@ body {
         line-height: 150%;
         letter-spacing: 0%;
 
-        &_name {}
-
-        // .profile__info_email
-
-        &_email {}
-
-        // .profile__info_role
-
         &_role {
             color: $green-text;
         }
@@ -1064,6 +1065,11 @@ body {
         justify-content: space-between;
         max-width: 540px;
         min-width: 280px;
+
+        @media (max-width: 320px) {
+            max-width: 280px;
+            align-items: center;
+        }
 
         // .admin-panel__add-product_img
 
@@ -1101,7 +1107,7 @@ body {
             min-width: 240px;
             border: none;
             background: $background;
-            border: 2px solid $background-shade;
+            border-bottom: 2px solid $background-shade;
             outline: none;
             color: $white;
             font-family: 'OpenSans-Regular';
@@ -1109,6 +1115,10 @@ body {
             line-height: 150%;
             letter-spacing: 0%;
             padding: 10px 16px;
+
+            @media (max-width: 320px) {
+                max-width: 240px;
+            }
         }
 
         &_btn {

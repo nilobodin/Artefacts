@@ -82,6 +82,14 @@
             slidesToShow: 4,
             prevArrow: $('.main__cards-arrows_arrow-left'),
             nextArrow: $('.main__cards-arrows_arrow-right'),
+            responsive: [
+                {
+                    breakpoint: 330,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
         });
     });
 </script>
